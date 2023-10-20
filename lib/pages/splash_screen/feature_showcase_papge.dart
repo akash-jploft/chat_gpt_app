@@ -23,19 +23,19 @@ class _FeatureShowCasePageState extends State<FeatureShowCasePage> {
     FeatureShowCaseModel(
         subtitle:
             "An excellence recourse for every individual to get things done in easiest way",
-        title: "This can help you anytime, anywhere",
+        title: "Get the Full Experience with AI Task",
         imgPath: "assets/showcase/showcase_2.svg"),
     FeatureShowCaseModel(
         subtitle:
             "An excellence recourse for every individual to get things done in easiest way",
-        title: "This can help you anytime, anywhere",
+        title: "Ask Anything, Get your Answer",
         imgPath: "assets/showcase/showcase_3.svg"),
   ];
 
   onNext() {
     setState(() {
       pageController.nextPage(
-          duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+          duration: Duration(microseconds: 9000), curve: Curves.easeIn);
     });
   }
 
@@ -59,7 +59,7 @@ class _FeatureShowCasePageState extends State<FeatureShowCasePage> {
         child: Column(
           children: [
             Spacer(
-              flex: 3,
+              flex: 4,
             ),
             SvgPicture.asset(feature.imgPath,
                 height: height * .32, width: width * .8),
@@ -112,13 +112,14 @@ class _FeatureShowCasePageState extends State<FeatureShowCasePage> {
             ),
             index == 2
                 ? Container(
-                    width: 120,
+                    width: 150,
                     height: 40,
                     child: AppSmallButton(
-                      onTap: goToNextPage,
-                      title: Text('Start now',
-                        style: TextStyle(fontSize: 16,color: Colors.black),
-                    )),
+                        onTap: goToNextPage,
+                        title: Text(
+                          'Start now',
+                          style: TextStyle(fontSize: 16, color: Colors.black),
+                        )),
                   )
                 : Row(
                     children: [
@@ -129,10 +130,15 @@ class _FeatureShowCasePageState extends State<FeatureShowCasePage> {
                             style: TextStyle(color: Color(0xff06CFF1)),
                           )),
                       Spacer(),
-                      AppSmallButton(
-                        onTap: onNext,
-                        title: Text('Next',
-                          style: TextStyle(fontSize: 16,color: Colors.black),
+                      Container(
+                        width: 90,
+                        height: 40,
+                        child: AppSmallButton(
+                          onTap: onNext,
+                          title: Text(
+                            'Next',
+                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          ),
                         ),
                       )
                     ],

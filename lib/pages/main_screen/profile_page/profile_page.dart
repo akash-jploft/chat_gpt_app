@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nabgh_app/constatns/app_constants.dart';
+import 'package:nabgh_app/pages/main_screen/profile_page/pages/edit_profile_page.dart';
+import 'package:nabgh_app/pages/main_screen/profile_page/pages/faq_page.dart';
+import 'package:nabgh_app/pages/main_screen/profile_page/pages/privacy_policyy_page.dart';
+import 'package:nabgh_app/pages/main_screen/profile_page/pages/terms_condition_page.dart';
+
 import 'package:nabgh_app/widget/app_small_button.dart';
+
+import '../../../widget/app_back_button.dart';
+import '../subscription_page/subscription_detail_page.dart';
+import '../subscription_page/subscription_page.dart';
 
 class ProfilePage extends StatefulWidget {
   static const routeName = "profile-page";
@@ -15,34 +24,37 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   buildAppBar() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 18).copyWith(top: 4, bottom: 8),
+      padding: EdgeInsets.symmetric(horizontal: 0).copyWith(top: 4, bottom: 8),
       child: Row(
         children: [
-          CircleAvatar(
-              backgroundColor: AppConstants.secondaryColor,
-              child: SvgPicture.asset("assets/icon/back.svg")),
+          AppBackButton(),
           Spacer(),
           Text(
             "My Profile",
             style: TextStyle(fontSize: 18),
           ),
           Spacer(),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),
-                color: AppConstants.secondaryColor),
-            child: Row(
-              children: [
-                SvgPicture.asset("assets/icon/edit.svg"),
-                SizedBox(
-                  width: 4,
-                ),
-                Text(
-                  "Edit",
-                  style: TextStyle(color: Colors.black),
-                )
-              ],
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed(EditProfilePage.routeName);
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18),
+                  color: AppConstants.secondaryColor),
+              child: Row(
+                children: [
+                  SvgPicture.asset("assets/icon/edit.svg"),
+                  SizedBox(
+                    width: 4,
+                  ),
+                  Text(
+                    "Edit",
+                    style: TextStyle(color: Colors.black),
+                  )
+                ],
+              ),
             ),
           )
         ],
@@ -109,20 +121,46 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    SizedBox(
+                      height: 16,
+                    ),
                     buildProfile(),
                     SizedBox(
                       height: 30,
                     ),
-                    buildMenuTile(title: "Account Settings", onTap: () {}),
-                    buildMenuTile(title: "Help", onTap: () {}),
-                    buildMenuTile(title: "Change password", onTap: () {}),
-                    buildMenuTile(title: "Privacy policy", onTap: () {}),
-                    buildMenuTile(title: "Terms & Conditions", onTap: () {}),
                     buildMenuTile(
-                        title: "Subscription Management", onTap: () {}),
-                    buildMenuTile(title: "FAQ", onTap: () {}),
+                        title: "Account Settings",
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(EditProfilePage.routeName);
+                        }),
+                    buildMenuTile(title: "Help", onTap: () {}),
+                    buildMenuTile(title: "Change Password", onTap: () {}),
+                    buildMenuTile(
+                        title: "Privacy Policy",
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(PrivacyPolicyPage.routeName);
+                        }),
+                    buildMenuTile(
+                        title: "Terms & Conditions",
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(TermConditionPage.routeName);
+                        }),
+                    buildMenuTile(
+                        title: "Subscription Management",
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(SubscriptionDetailPage.routeName);
+                        }),
+                    buildMenuTile(
+                        title: "FAQ",
+                        onTap: () {
+                          Navigator.of(context).pushNamed(FaqPage.routeName);
+                        }),
                     SizedBox(
-                      height: 18,
+                      height: 12,
                     ),
                     Container(
                       height: 45,
@@ -142,7 +180,19 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                           onTap: () {}),
-                    )
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Delete Account",
+                          style: TextStyle(color: AppConstants.secondaryColor),
+                        )),
+                    SizedBox(
+                      height: 18,
+                    ),
                   ],
                 ),
               ))

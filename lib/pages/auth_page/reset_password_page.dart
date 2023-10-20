@@ -67,7 +67,7 @@ class PasswordResetPage extends StatelessWidget {
                   AppTextField(
                       controller: confirmPasswordController,
                       imgSrc: "assets/icon/lock.svg",
-                      title: "Confirm password"),
+                      title: "Confirm Password"),
                   SizedBox(
                     height: height * .04,
                   ),

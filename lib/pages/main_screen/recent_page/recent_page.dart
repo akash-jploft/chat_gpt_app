@@ -31,6 +31,8 @@ class _RecentPageState extends State<RecentPage> {
             .copyWith(bottom: 10, top: 4),
         child: Row(
           children: [
+
+            SizedBox(width: 18,),
             Spacer(),
             Text(
               "Recent",
@@ -71,7 +73,7 @@ class _RecentPageState extends State<RecentPage> {
 
     return Scaffold(
         bottomNavigationBar: Container(
-            margin: EdgeInsets.symmetric(horizontal: 18, vertical: 8),
+            margin: EdgeInsets.symmetric(horizontal: 18, vertical: 8).copyWith(bottom: 4),
             height: 50,
             child: AppSmallButton(
               title: Row(

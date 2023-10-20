@@ -73,7 +73,7 @@ class _RoundedWithCustomCursorState extends State<ForgotPinInputPage> {
     final borderColor = Colors.white.withOpacity(.2);
 
     final defaultPinTheme = PinTheme(
-      width: 56,
+      width: 100,
       height: 56,
       textStyle: TextStyle(
         fontSize: 22,
@@ -129,7 +129,7 @@ class _RoundedWithCustomCursorState extends State<ForgotPinInputPage> {
                 Directionality(
                   textDirection: TextDirection.ltr,
                   child: Pinput(
-                    length: 5,
+                    length: 4,
                     controller: pinController,
                     focusNode: focusNode,
                     androidSmsAutofillMethod:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nabgh_app/pages/splash_screen/feature_showcase_papge.dart';
+import 'package:nabgh_app/pages/splash_screen/splash_screen.dart';
 import 'package:nabgh_app/router.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       onGenerateRoute: generateRoute,
-      home: FeatureShowCasePage(),
+      home: SplashScreen(),
     );
   }
 }

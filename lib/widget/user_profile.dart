@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nabgh_app/pages/profile_page/profile_page.dart';
+
+import '../pages/main_screen/profile_page/profile_page.dart';
 
 class UserProfile extends StatelessWidget {
 

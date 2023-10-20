@@ -21,18 +21,18 @@ class _SearchScreenState extends State<SearchScreen> {
         imgSrc: "assets/icon/suggestion_1.svg"),
     SuggestionCardModel(
         color: Color(0xff29FDBB),
-        title: "Write a paragraph",
-        subtitle: "General well-written paragraph on any given subject",
+        title: "Summarize (TL;DR)",
+        subtitle: "Extract key points from long text.",
         imgSrc: "assets/icon/suggestion_2.svg"),
     SuggestionCardModel(
         color: Color(0xffFAFAFA),
-        title: "Write a paragraph",
-        subtitle: "General well-written paragraph on any given subject",
+        title: "Lyrics",
+        subtitle: "Generate lyrics of a song for any music genre.",
         imgSrc: "assets/icon/suggestion_3.svg"),
     SuggestionCardModel(
         color: Color(0xffEF96FE),
-        title: "Write a paragraph",
-        subtitle: "General well-written paragraph on any given subject",
+        title: "Poem",
+        subtitle: "Generate poem in deferent styles.",
         imgSrc: "assets/icon/suggestion_4.svg"),
   ];
 
@@ -96,7 +96,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   buildSuggestionCard({required SuggestionCardModel suggestion}) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
         color: suggestion.color,
         borderRadius: BorderRadius.all(Radius.circular(24)),
@@ -109,7 +109,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
           SvgPicture.asset(suggestion.imgSrc),
           SizedBox(
-            height: 4,
+            height: 12,
           ),
           Text(
             suggestion.title,
@@ -119,7 +119,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 fontWeight: FontWeight.w600),
           ),
           SizedBox(
-            height: 4,
+            height: 8,
           ),
           Text(
             suggestion.subtitle,
@@ -230,7 +230,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             width: double.infinity,
                             child: Text(
                               "Suggestion for today",
-                              style: TextStyle(fontSize: 16),
+                              style: TextStyle(fontSize: 16,color: Colors.white.withOpacity(.8)),
                             ),
                           ),
                           SizedBox(

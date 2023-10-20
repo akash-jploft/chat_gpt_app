@@ -12,16 +12,14 @@ class AppSmallButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
-      child: Container(
+        onTap: onTap,
+        child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(22),
               gradient: AppConstants.gradient),
-          child:
-      title,
-    ))
-    ;
+          child: title,
+        ));
   }
 }

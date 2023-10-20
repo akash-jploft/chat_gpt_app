@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nabgh_app/constatns/app_constants.dart';
+import 'package:nabgh_app/pages/main_screen/chat_page/chat_screen.dart';
 
 import '../../../model/discover_card_model.dart';
 import '../../../widget/user_profile.dart';
@@ -28,6 +29,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
         title: 'Code',
         subTitle: 'Extract key points from long text.'),
     DiscoverCardModel(
+        imgSrc: 'assets/discover/content.svg',
+        title: 'Content',
+        subTitle: 'Extract key points from long text.'),
+    DiscoverCardModel(
         imgSrc: 'assets/discover/entertenment.svg',
         title: 'Entertainment',
         subTitle: 'Extract key points from long text.'),
@@ -47,11 +52,16 @@ class _DiscoverPageState extends State<DiscoverPage> {
 
   buildAppBar() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0).copyWith(bottom: 10,top: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0)
+          .copyWith(bottom: 10, top: 4),
       child: Row(
         children: [
+          SizedBox(width: 18,),
           Spacer(),
-          Text("Discover",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18),),
+          Text(
+            "Discover",
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+          ),
           Spacer(),
           UserProfile(),
         ],
@@ -60,40 +70,43 @@ class _DiscoverPageState extends State<DiscoverPage> {
   }
 
   buildDiscoverCard({required DiscoverCardModel discover}) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
-        color: Color(0xff3B3B3B),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 18,
-          ),
-          SvgPicture.asset(
-            discover.imgSrc,
-            height: 30,
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            discover.title,
-            style: TextStyle(
-                color: AppConstants.secondaryColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 15),
-          ),
-          SizedBox(
-            height: 18,
-          ),
-          Text(
-            discover.subTitle,
-            style: TextStyle(fontSize: 15),
-          ),
-        ],
+    return InkWell(
+      onTap: () => Navigator.of(context).pushNamed(ChatPage.routeName),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+          color: Color(0xff3B3B3B),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 18,
+            ),
+            SvgPicture.asset(
+              discover.imgSrc,
+              height: 30,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              discover.title,
+              style: TextStyle(
+                  color: AppConstants.secondaryColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
+            ),
+            SizedBox(
+              height: 18,
+            ),
+            Text(
+              discover.subTitle,
+              style: TextStyle(fontSize: 15),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -109,7 +122,9 @@ class _DiscoverPageState extends State<DiscoverPage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: 8,),
+                  SizedBox(
+                    height: 8,
+                  ),
                   GridView.builder(
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     physics: NeverScrollableScrollPhysics(),
@@ -125,7 +140,6 @@ class _DiscoverPageState extends State<DiscoverPage> {
                       );
                     },
                   ),
-
                   SizedBox(
                     height: 18,
                   ),

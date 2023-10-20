@@ -105,7 +105,7 @@ class _LoginPageState extends State<SignUpPage> {
                     AppTextField(
                         controller: emailController,
                         imgSrc: "assets/icon/mail.svg",
-                        title: "Enter your email Id"),
+                        title: "Enter your email id"),
                     SizedBox(
                       height: height * .02,
                     ),
@@ -119,7 +119,7 @@ class _LoginPageState extends State<SignUpPage> {
                     AppTextField(
                         controller: confirmPasswordController,
                         imgSrc: "assets/icon/lock.svg",
-                        title: "Confirm password"),
+                        title: "Confirm Password"),
 
                     SizedBox(
                       height: height * .03,
@@ -178,7 +178,7 @@ class _LoginPageState extends State<SignUpPage> {
                     ),
                     Center(
                         child: Text(
-                      "Social media login",
+                      "Continue with social media",
                       style: TextStyle(color: Colors.white.withOpacity(.6)),
                     )),
                     SizedBox(

@@ -59,7 +59,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   AppTextField(
                       controller: emailController,
                       imgSrc: "assets/icon/mail.svg",
-                      title: "Enter your email Id"),
+                      title: "Enter your email id"),
                   SizedBox(
                     height: height * .04,
                   ),
